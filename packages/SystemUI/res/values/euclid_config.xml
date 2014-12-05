@@ -65,4 +65,7 @@
 
     <!-- Whether to play turbulence noise after clicking the play button -->
     <bool name="config_turbulenceNoise">true</bool>
+
+    <!-- Notification counter -->
+    <integer name="status_bar_notification_info_maxnum">999</integer>
 </resources>
