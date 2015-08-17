@@ -168,4 +168,7 @@
     <!-- Media Info Tile -->
     <string name="quick_settings_media_info_label">Media Info</string>
     <string name="quick_settings_media_info_no_music">No music playing</string>
+
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>
