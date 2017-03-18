@@ -153,4 +153,9 @@
         android:title="@string/tuner_low_priority"
         sysui:defValue="false" />
 
+    <com.android.systemui.tuner.TunerSwitch
+        android:icon="@drawable/ic_statusbar_bluetooth_bar"
+        android:key="system:bluetooth_show_battery"
+        android:title="@string/status_bar_bluetooth_battery_title"
+        sysui:defValue="true" />
 </PreferenceScreen>
