@@ -282,5 +282,6 @@ public class SystemSettingsValidators {
                 new InclusiveIntegerRangeValidator(
                         CV_PREFERRED_INTENSITY_MIN, CV_PREFERRED_INTENSITY_MAX));
 	    VALIDATORS.put(System.ADVANCED_REBOOT, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED, BOOLEAN_VALIDATOR);
     }
 }
