@@ -32,4 +32,8 @@
 
     <!-- Cycle through ringer modes -->
     <java-symbol type="string" name="volume_dialog_ringer_guidance_normal" />
+
+    <!-- Defines the actions shown in advanced reboot submenu -->
+    <java-symbol type="array" name="config_restartActionsList" />
+
 </resources>
