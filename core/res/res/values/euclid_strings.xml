@@ -29,4 +29,8 @@
 
     <!-- Game Space -->
     <string name="gamespace_new_game_added"><xliff:g id="name" example="MyApp">%s</xliff:g> added to Game Space</string>
+
+    <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Press and hold power button to unlock</string>
+
 </resources>
