@@ -31,6 +31,7 @@ import com.android.systemui.qs.tiles.DataSwitchTile
 import com.android.systemui.qs.tiles.HeadsUpTile
 import com.android.systemui.qs.tiles.MediaInfoTile
 import com.android.systemui.qs.tiles.NfcTile
+import com.android.systemui.qs.tiles.SleepModeTile
 import com.android.systemui.qs.tiles.SoundTile
 import com.android.systemui.qs.tiles.SyncTile
 import com.android.systemui.qs.tiles.UsbTetherTile
@@ -51,6 +52,12 @@ import dagger.multibindings.StringKey
 
 @Module
 interface EuclidModule {
+
+    /** Inject SleepModeTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(SleepModeTile.TILE_SPEC)
+    fun bindSleepModeTile(sleepModeTile: SleepModeTile): QSTileImpl<*>
 
     /** Inject AmbientDisplayTile into tileMap in QSModule */
     @Binds
@@ -279,6 +286,23 @@ interface EuclidModule {
                 category = TileCategory.UTILITIES,
             )
         }
+
+       @Provides
+        @IntoMap
+        @StringKey(SleepModeTile.TILE_SPEC)
+        fun provideSleepModeConfig(uiEventLogger: QsEventLogger): QSTileConfig {
+            return QSTileConfig(
+                tileSpec = TileSpec.create(SleepModeTile.TILE_SPEC),
+                uiConfig = QSTileUIConfig.Resource(
+                    iconRes = com.android.internal.R.drawable.ic_sleep,
+                    labelRes = R.string.quick_settings_sleep_mode_label
+                ),
+                instanceId = uiEventLogger.getNewInstanceId(),
+                category = TileCategory.UTILITIES
+
+            )
+        }
+
 
         @Provides
         @IntoMap
