@@ -211,4 +211,10 @@
     <string name="smartspace_flight_qr_code">QR code</string>
     <string name="smartspace_icu_date_pattern">EEEMMMd</string>
     <string name="smartspace_role_desc">View</string>
+
+    <!-- Data usage info in QS footer -->
+    <string name="usage_data">used today</string>
+    <string name="usage_data_weekly">used this week</string>
+    <string name="usage_data_default_suffix">Data</string>
+    <string name="usage_wifi_default_suffix">Wi-Fi</string>
 </resources>
