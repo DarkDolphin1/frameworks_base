@@ -133,4 +133,6 @@
     <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
     <!-- Data saver status bar icon -->
     <string name="status_bar_data_saver">Data saver</string>
+    <!-- Call strength status bar icon -->
+    <string name="status_bar_call_strength">Call strength</string>
 </resources>
