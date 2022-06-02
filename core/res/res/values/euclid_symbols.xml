@@ -73,4 +73,7 @@
 
     <!-- USB -->
     <java-symbol type="string" name="config_usbFunctionActivity" />
+
+    <!-- Lock gesture -->
+    <java-symbol type="string" name="gesture_locked_warning" />
 </resources>
