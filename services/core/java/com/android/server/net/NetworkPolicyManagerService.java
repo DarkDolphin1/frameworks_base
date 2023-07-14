@@ -39,6 +39,7 @@ import static android.content.Intent.ACTION_PACKAGE_ADDED;
 import static android.content.Intent.ACTION_UID_REMOVED;
 import static android.content.Intent.ACTION_USER_ADDED;
 import static android.content.Intent.ACTION_USER_REMOVED;
+import static android.content.Intent.EXTRA_REPLACING;
 import static android.content.Intent.EXTRA_UID;
 import static android.content.pm.ApplicationInfo.FLAG_INSTALLED;
 import static android.content.pm.ApplicationInfo.PRIVATE_FLAG_HIDDEN;
