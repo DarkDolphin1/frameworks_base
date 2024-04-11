@@ -29,6 +29,7 @@ import com.android.systemui.qs.tiles.AirplaneModeTile
 import com.android.systemui.qs.tiles.BluetoothTile
 import com.android.systemui.qs.tiles.CastTile
 import com.android.systemui.qs.tiles.DataSaverTile
+import com.android.systemui.qs.tiles.DnsTile
 import com.android.systemui.qs.tiles.HotspotTile
 import com.android.systemui.qs.tiles.InternetTile
 import com.android.systemui.qs.tiles.InternetTileNewImpl
@@ -116,6 +117,12 @@ interface ConnectivityModule {
         impl: InternetTileDataInteractor
     ): QSTileAvailabilityInteractor
 
+    /** Inject DnsTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(DnsTile.TILE_SPEC)
+    fun bindDnsTile(dnsTile: DnsTile): QSTileImpl<*>
+
     companion object {
 
         const val AIRPLANE_MODE_TILE_SPEC = "airplane"
@@ -124,6 +131,7 @@ interface ConnectivityModule {
         const val HOTSPOT_TILE_SPEC = "hotspot"
         const val CAST_TILE_SPEC = "cast"
         const val BLUETOOTH_TILE_SPEC = "bt"
+        const val DNS_TILE_SPEC = "dns"
 
         /** Inject InternetTile or InternetTileNewImpl into tileMap in QSModule */
         @Provides
@@ -286,6 +294,21 @@ interface ConnectivityModule {
                     QSTileUIConfig.Resource(
                         iconRes = R.drawable.qs_bluetooth_icon_off,
                         labelRes = R.string.quick_settings_bluetooth_label,
+                    ),
+                instanceId = uiEventLogger.getNewInstanceId(),
+                category = TileCategory.CONNECTIVITY,
+            )
+
+        @Provides
+        @IntoMap
+        @StringKey(DNS_TILE_SPEC)
+        fun provideDnsTile(uiEventLogger: QsEventLogger): QSTileConfig =
+            QSTileConfig(
+                tileSpec = TileSpec.create(DNS_TILE_SPEC),
+                uiConfig =
+                    QSTileUIConfig.Resource(
+                        iconRes = R.drawable.ic_settings_dns,
+                        labelRes = com.android.settingslib.R.string.select_private_dns_configuration_title
                     ),
                 instanceId = uiEventLogger.getNewInstanceId(),
                 category = TileCategory.CONNECTIVITY,
