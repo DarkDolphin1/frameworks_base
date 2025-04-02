@@ -2889,6 +2889,10 @@ public final class SystemServer implements Dumpable {
             mSystemServiceManager.startService(VbmetaHashService.class);
             t.traceEnd();
 
+            // GameSpaceManagerService
+            t.traceBegin("GameSpaceManagerService");
+            mSystemServiceManager.startService(GameSpaceManagerService.class);
+            t.traceEnd();
         }
 
         t.traceBegin("StartMediaProjectionManager");
