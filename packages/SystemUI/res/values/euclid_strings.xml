@@ -164,4 +164,7 @@
     <string name="status_bar_hd_calling">HD calling (VoLTE/VoNR)</string>
     <!-- Name of the VoWiFi status bar icon. -->
     <string name="status_bar_vowifi">Wi-Fi calling (VoWiFi)</string>
+
+    <!-- Name of the Internet speed indicator icon. -->
+    <string name="status_bar_network_speed">Internet speed</string>
 </resources>
