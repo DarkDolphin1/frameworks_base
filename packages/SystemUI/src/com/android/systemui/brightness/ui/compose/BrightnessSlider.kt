@@ -358,7 +358,7 @@ fun BrightnessSlider(
         )
 
         if (hasAutoBrightness) {
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(10.dp))
 
             val coroutineScope = rememberCoroutineScope()
             val autoBrightnessBackgroundColor by animateColorAsState(
