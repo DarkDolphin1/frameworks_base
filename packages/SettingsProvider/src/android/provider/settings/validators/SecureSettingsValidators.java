@@ -521,5 +521,7 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.DOZE_FOR_NOTIFICATIONS, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.DOZE_TAP_GESTURE_AMBIENT, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.DOZE_PICK_UP_GESTURE_AMBIENT, BOOLEAN_VALIDATOR);
+        // euclidOS additions
+        VALIDATORS.put(Secure.GMS_CERT_CHAIN, BOOLEAN_VALIDATOR);
     }
 }
