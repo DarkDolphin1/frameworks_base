@@ -38,7 +38,7 @@ class ScrimUtils @Inject constructor(dumpManager: DumpManager) : Dumpable {
         fun onKeyguardFadingAwayChanged(fadingAway: Boolean) {}
         fun onKeyguardGoingAwayChanged(goingAway: Boolean) {}
         fun onPrimaryBouncerShowingChanged(showing: Boolean) {}
-        fun onDozingChanged() {}
+        fun onDozingChanged(dozing: Boolean) {}
         fun onExpandedFractionChanged(expandedFraction: Float) {}
         fun onBarStateChanged(state: Int) {}
         fun onQsVisibilityChanged(visible: Boolean) {}
@@ -115,7 +115,7 @@ class ScrimUtils @Inject constructor(dumpManager: DumpManager) : Dumpable {
     fun onDozingChanged(dozing: Boolean) {
         if (mIsDozing == null || mIsDozing != dozing) {
             mIsDozing = dozing
-            listeners.notifyOnMain { it.onDozingChanged() }
+            listeners.notifyOnMain { it.onDozingChanged(dozing) }
         }
     }
 
