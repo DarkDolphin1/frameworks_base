@@ -43,4 +43,9 @@
 
     <!-- HD calling icon -->
     <dimen name="signal_icon_viewport_size">24dp</dimen>
+
+    <!-- Now Playing spacing values -->
+    <dimen name="nowplaying_icon_padding_compact">8dp</dimen>
+    <dimen name="nowplaying_icon_padding_normal">16dp</dimen>
+    <dimen name="nowplaying_title_artist_gap">6dp</dimen>
 </resources>
