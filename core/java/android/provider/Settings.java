@@ -14349,12 +14349,6 @@ public final class Settings {
          * @hide
          */
         public static final String AAPM_USB_DATA_PROTECTION = "aapm_usb_data_protection";
-
-        /**
-         * boolean value. toggles swipe up hint in gestural nav mode
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HINT = "navigation_bar_hint";
     }
 
     /**
