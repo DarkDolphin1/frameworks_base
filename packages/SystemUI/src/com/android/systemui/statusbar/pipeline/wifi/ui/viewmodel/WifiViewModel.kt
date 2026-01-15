@@ -25,8 +25,6 @@ import com.android.systemui.log.table.logDiffsForTable
 import com.android.systemui.statusbar.pipeline.airplane.ui.viewmodel.AirplaneModeViewModel
 import com.android.systemui.statusbar.pipeline.dagger.StatusBarPipelineModule.Companion.FIRST_MOBILE_SUB_SHOWING_NETWORK_TYPE_ICON
 import com.android.systemui.statusbar.pipeline.dagger.WifiTableLog
-import com.android.systemui.statusbar.pipeline.netspeed.ui.model.NetworkSpeedIcon
-import com.android.systemui.statusbar.pipeline.netspeed.ui.viewmodel.NetworkSpeedViewModel
 import com.android.systemui.statusbar.pipeline.shared.ConnectivityConstants
 import com.android.systemui.statusbar.pipeline.shared.data.model.DataActivityModel
 import com.android.systemui.statusbar.pipeline.wifi.domain.interactor.WifiInteractor
@@ -70,7 +68,6 @@ constructor(
     interactor: WifiInteractor,
     @Background scope: CoroutineScope,
     wifiConstants: WifiConstants,
-    networkSpeedViewModel: NetworkSpeedViewModel,
 ) : WifiViewModelCommon {
     override val wifiIcon: StateFlow<WifiIcon> =
         combine(
@@ -153,6 +150,4 @@ constructor(
             }
             .distinctUntilChanged()
             .stateIn(scope, SharingStarted.WhileSubscribed(), VoWifiIcon.Hidden)
-
-    override val networkSpeedIcon: Flow<NetworkSpeedIcon> = networkSpeedViewModel.icon
 }
