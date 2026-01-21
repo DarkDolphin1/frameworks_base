@@ -696,14 +696,10 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
         mColorScheme = isNightMode() ? mDarkColorScheme : mLightColorScheme;
 
         mAccentOverlay = newFabricatedOverlay("accent");
-        assignColorsToOverlay(mAccentOverlay, DynamicColors.getAllAccentPalette(luminanceFactor, chromaFactor, wholePalette), false);
+        assignColorsToOverlay(mAccentOverlay, DynamicColors.getAllAccentPalette(), false);
 
         mNeutralOverlay = newFabricatedOverlay("neutral");
-        if (tintBg) {
-            assignColorsToOverlay(mNeutralOverlay, DynamicColors.getAllNeutralPalette(luminanceFactor, chromaFactor, wholePalette), false);
-        } else {
-            assignColorsToOverlay(mNeutralOverlay, DynamicColors.getAllNeutralPalette(), false);
-        }
+        assignColorsToOverlay(mNeutralOverlay, DynamicColors.getAllNeutralPalette(), false);
 
         mDynamicOverlay = newFabricatedOverlay("dynamic");
         // Themed Colors
